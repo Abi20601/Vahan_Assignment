@@ -14,6 +14,7 @@ import Create from './pages/create/Create';
 import Read from './pages/read/Rea';
 import Update from './pages/update/Upd';
 import Delete from './pages/delete/Del';
+import Updatebtn from './pages/update/Updbtn';
 
 
 
@@ -29,6 +30,7 @@ root.render(
       <Route path="read" element={<Read />} />
       <Route path="update" element={<Update />} />
       <Route path="delete" element={<Delete />} />
+      <Route path="updbtn" element={<Updatebtn />} />
     </Route>
   </Routes>
   </React.StrictMode>
