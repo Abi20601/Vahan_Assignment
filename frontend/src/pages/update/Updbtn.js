@@ -1,8 +1,7 @@
-import React, { useEffect,useState } from 'react'
+import React, { useState } from 'react'
 import '../../index.css'
-import { useLocation ,useParams, useNavigate } from 'react-router-dom';
+import { useLocation , useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { keys } from '@mui/system';
 
 
 const Updbtn = () => {
@@ -12,16 +11,6 @@ const Updbtn = () => {
 
     const location = useLocation();
     const { key, id } = location.state;
-
-    // useEffect(() => {
-    //     axios.get('http://localhost:8000/read/'+id)
-    //     .then(res => {
-    //         console.log(id);
-    //         setvalues({...values, name: res.data[0].name, email: res.data[0].email,  phno: res.data[0].phno, dob: res.data[0].dob});    
-    //         console.log(id);
-    // })
-    //     .catch(err => console.log(err));
-    // }, [])
 
     const [values, setvalues] = useState({
         name: key.name,
@@ -34,13 +23,13 @@ const handleUpdate = (event) =>
 {
     event.preventDefault();
     if (values.name === "") {setError("No Name is provided")} 
-    if (values.phno.length !== 10) {setError("Invalid Number")}
+    if (values.phno <= 1000000000) {setError("Invalid Number")}
 
     axios.put('http://localhost:8000/update/'+id,values)
     .then(res => {
         console.log(res)
         console.log(values)
-        // navigate('/read')
+        navigate('/read')
     }).catch(err => console.log(err));
 }
   return (

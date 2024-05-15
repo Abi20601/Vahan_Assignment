@@ -9,16 +9,18 @@ import ListItemText from '@mui/material/ListItemText';
 import {mainnavbaritems} from './consts/navbaritems';
 import { useNavigate } from "react-router-dom";
 import { navbarStyles } from './styles';
+import logoImage from '../../assets/logo.png';
 
 const Navbar = () => {
     const navigate = useNavigate();
-
+    
     return (
     <Drawer
         sx={navbarStyles.drawer}
         variant="permanent"
         anchor="left"
       >
+        <img src={logoImage} alt="Logo" style={{ width: '100%', height: 'auto' }} />
         <Toolbar />
         <Divider />
         <List>

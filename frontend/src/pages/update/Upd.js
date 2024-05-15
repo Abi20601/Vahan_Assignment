@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../index.css'
 import axios from 'axios';
 
@@ -13,10 +13,12 @@ const Upd = () => {
         .then(res => setData(res.data))
         .catch(err => console.log(err));
     }, [])
+
+    
   return (
     <div className='d-flex vh-100 bg-secondary justify-content-center align-items-center'>
     <div className = ' customDiv w-50 bg-white rounded p-3'>
-        <h2>Users List</h2>
+        <h2>Update List</h2>
 
         <table className='table'>
             <thead>
@@ -37,7 +39,7 @@ const Upd = () => {
                     <td>{users.dob}</td>
                     <td>
                         <Link to = "../Updbtn" state= {{key: users,id: index}}>
-                            <button className='btn btn-sm btn-primary mx-2'>Edit</button>
+                            <button className='btn btn-success'>Edit</button>
                             {}
                         </Link>
                     </td>

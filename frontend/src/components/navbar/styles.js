@@ -5,7 +5,7 @@ export const navbarStyles = {
         '& .MuiDrawer-paper': {
             width: 320,
             boxSizing: 'border-box',
-            backgroundColor: '#2196f3'
+            backgroundColor: '#00ce9a'
         },
         '& .Mui-selected': {
             color: 'red',
